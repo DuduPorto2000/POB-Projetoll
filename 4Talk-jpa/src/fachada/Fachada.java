@@ -64,7 +64,7 @@ public class Fachada {
 		List<Mensagem> retorno = DAOMensagem.queryMSGs(termo);
 		if(retorno == null) {
 			DAO.rollback();
-			throw new Exception("não existe mensagem com este termo.");
+			throw new Exception("nï¿½o existe mensagem com este termo.");
 		}
 		DAO.commit();
 		return retorno;
@@ -123,7 +123,7 @@ public class Fachada {
 //	public static Mensagem criarMensagem(String texto) throws Exception{
 //		/*
 //		 * tem que esta logado
-//		 * criar a mensagem, onde o criador é a usuario logada
+//		 * criar a mensagem, onde o criador ï¿½ a usuario logada
 //		 * adicionar esta mensagem na lista de mensagens de cada usuario do grupo,
 //		 * incluindo a do criador
 //		 * retornar mensagem criada
@@ -138,7 +138,7 @@ public class Fachada {
 //		Usuario usuariologado = getLogado();
 //		if(usuariologado == null) {
 //			DAO.rollback();
-//			throw new Exception("Usuário não está logado.");
+//			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
 //		}
 //		int id = daomensagem.obterUltimoId();
 //		id++;
@@ -158,15 +158,15 @@ public class Fachada {
 		if (getLogado() != null)
 			return getLogado().getMensagens();
 		else
-			throw new Exception("O usuario não está logado");
+			throw new Exception("O usuario nï¿½o estï¿½ logado");
 	}
 
 	public static void apagarMensagens(int... ids) throws  Exception{
 		/*
 		 * tem que esta logado
 		 * recebe uma lista de numeros de id 
-		 * (id é um numero entre 1 a N, onde N é a quatidade atual de mensagens do grupo)
-		 * validar se ids são de mensagens criadas pelo usuario logado
+		 * (id ï¿½ um numero entre 1 a N, onde N ï¿½ a quatidade atual de mensagens do grupo)
+		 * validar se ids sï¿½o de mensagens criadas pelo usuario logado
 		 * (um usuario nao pode apagar mensagens de outros usuarios)
 		 * 
 		 * remover cada mensagem da lista de mensagens do usuario logado
@@ -176,22 +176,22 @@ public class Fachada {
 		Usuario usuariologado = getLogado();
 		if(usuariologado == null) {
 			DAO.rollback();
-			throw new Exception("Usuário não está logado.");
+			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
 		}
 		int size = daomensagem.readAll().size();
 		for (int i : ids) {
 			if(i > size) {
 				DAO.rollback();
-				throw new Exception("Mensagem não encontrada.");
+				throw new Exception("Mensagem nï¿½o encontrada.");
 			}
 			Mensagem m = daomensagem.read(i);
 			if(!usuariologado.getMensagens().contains(m)) {
 				DAO.rollback();
-				throw new Exception("Mensagem não pertence ao usuário logado.");
+				throw new Exception("Mensagem nï¿½o pertence ao usuï¿½rio logado.");
 			}
 			if(m == null) {
 				DAO.rollback();
-				throw new Exception("Mensagem não encontrada.");
+				throw new Exception("Mensagem nï¿½o encontrada.");
 			}
 			daomensagem.delete(m);
 			usuariologado.remover(m);
@@ -237,7 +237,7 @@ public class Fachada {
 
 	/**************************************************************
 	 * 
-	 * NOVOS MÉTODOS DA FACHADA PARA O PROJETO 2
+	 * NOVOS Mï¿½TODOS DA FACHADA PARA O PROJETO 2
 	 * 
 	 **************************************************************/
 
@@ -260,8 +260,8 @@ public class Fachada {
 		/*
 		 * o usuario (nome+senha) tem que estar desativado
 		 *  
-		 * enviar um email para o administrador com a mensagem "nome solicita ativação"
-		 * usar o método Fachada.enviarEmail(...) 
+		 * enviar um email para o administrador com a mensagem "nome solicita ativaï¿½ï¿½o"
+		 * usar o mï¿½todo Fachada.enviarEmail(...) 
 		 * 
 		 */
 	}
@@ -270,8 +270,8 @@ public class Fachada {
 		/*
 		 * o usuario (nome+senha) tem que estar desativado
 		 *  
-		 * enviar um email para o administrador com a mensagem "nome solicita exclusão"
-		 * usar o método Fachada.enviarEmail(...) 
+		 * enviar um email para o administrador com a mensagem "nome solicita exclusï¿½o"
+		 * usar o mï¿½todo Fachada.enviarEmail(...) 
 		 * 
 		 */
 	}
@@ -289,11 +289,11 @@ public class Fachada {
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("O usuário deve ser administrador para executar essa ação.");
+			throw new Exception("O usuï¿½rio deve ser administrador para executar essa aï¿½ï¿½o.");
 		}
 		if(!u.ativo()) {
 			DAO.rollback();
-			throw new Exception("Usuário já está ativo.");
+			throw new Exception("Usuï¿½rio jï¿½ estï¿½ ativo.");
 		}
 		u.ativar();
 //		criarMensagem(u.getNome() + " entrou no grupo");
@@ -303,7 +303,7 @@ public class Fachada {
 	public static void apagarUsuario(String nome) throws  Exception{
 		/*
 		 * o usuario logado tem que ser um administrador  e o usuario a 
-		 * ser apagado tem que estar desativado (e não pode ser do tipo Administrador)
+		 * ser apagado tem que estar desativado (e nï¿½o pode ser do tipo Administrador)
 		 *  
 		 * apagar as mensagens do usuario e apagar o usuario 
 		 * criar a mensagem "nome foi excluido do sistema"
@@ -313,11 +313,11 @@ public class Fachada {
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("O usuário deve ser administrador para executar essa ação.");
+			throw new Exception("O usuï¿½rio deve ser administrador para executar essa aï¿½ï¿½o.");
 		}
 		if(u.ativo() && getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("Usuário tem que estar desativado.");
+			throw new Exception("Usuï¿½rio tem que estar desativado.");
 		}
 		
 		apagarMensagens(daomensagem.GetIds(u));
@@ -326,7 +326,7 @@ public class Fachada {
 
 	/**************************************************************
 	 * 
-	 * MÉTODO PARA ENVIAR EMAIL, USANDO UMA CONTA (SMTP) DO GMAIL
+	 * Mï¿½TODO PARA ENVIAR EMAIL, USANDO UMA CONTA (SMTP) DO GMAIL
 	 * ELE ABRE UMA JANELA PARA PEDIR A SENHA DO EMAIL DO EMITENTE
 	 * ELE USA A BIBLIOTECA JAVAMAIL (ver pom.xml)
 	 * Lembrar de: 
