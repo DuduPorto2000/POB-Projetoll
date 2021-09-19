@@ -3,6 +3,9 @@ package modelo;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Log {
 	private String datahora;
 	private String nome;

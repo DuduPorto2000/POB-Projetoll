@@ -4,8 +4,13 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Usuario {
 	private String nomesenha;			//  nome + / + senha
+	@OneToMany(mappedBy = "usuario", orphanRemoval = true)
 	private List<Mensagem> mensagens = new ArrayList<>();   //criadas por ele
 	private boolean ativo = true;
 
@@ -26,6 +31,10 @@ public class Usuario {
 	
 	public void desativar() {
 		ativo=false;
+	}
+	
+	public void ativar() {
+		ativo=true;
 	}
 
 	public List<Mensagem> getMensagens() {
