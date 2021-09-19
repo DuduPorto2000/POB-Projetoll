@@ -89,7 +89,7 @@ public class Fachada {
 	public static void login(String nome, String senha) throws Exception{		
 		//verificar se ja existe um usuario logada
 		if(usuariologado!=null)
-			throw new Exception ("ja existe um usuario logado"+getNomeLogado());
+			throw new Exception ("ja existe um usuario logado"+getLogado());
 
 		DAO.begin();	
 		Usuario u = daousuario.read(nome+"/"+senha);	
@@ -217,7 +217,7 @@ public class Fachada {
 		 id++;
 		 Mensagem m = new Mensagem(id,usuarioLogado, texto);
 		 daomensagem.create(m);
-		 usuarioLogado.desativo();
+		 usuarioLogado.desativar();
 		 daousuario.update(usuarioLogado);
 		 logoff();
 		 DAO.commit();
