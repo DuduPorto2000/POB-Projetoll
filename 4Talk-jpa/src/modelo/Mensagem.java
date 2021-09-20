@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,12 +18,12 @@ public class Mensagem {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String datahora;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     private Usuario criador;
     private String texto;	//formato "yyyyMMdd"
-                
-    public Mensagem(int id, Usuario criador, String texto) {
-		this.id = id;
+    
+    public Mensagem() {}
+    public Mensagem(Usuario criador, String texto) {
 		this.criador = criador;
 		this.texto = texto;
 		this.datahora = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss"));

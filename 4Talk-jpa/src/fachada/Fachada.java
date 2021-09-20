@@ -1,5 +1,6 @@
 package fachada;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Properties;
 
@@ -73,7 +74,7 @@ public class Fachada {
 	public static Usuario criarUsuario(String nome, String senha) throws  Exception{
 		// nao precisa estar logado
 		DAO.begin();	
-		Usuario u = daousuario.read(nome+"/"+senha);	
+		Usuario u = daousuario.read(nome+"/"+senha);
 		if(u != null) {
 			DAO.rollback();	
 			throw new Exception("criar usuario - usuario existente:" + nome);
@@ -120,34 +121,33 @@ public class Fachada {
 		return usuariologado;
 	}
 
-//	public static Mensagem criarMensagem(String texto) throws Exception{
-//		/*
-//		 * tem que esta logado
-//		 * criar a mensagem, onde o criador ï¿½ a usuario logada
-//		 * adicionar esta mensagem na lista de mensagens de cada usuario do grupo,
-//		 * incluindo a do criador
-//		 * retornar mensagem criada
-//		 */
-//
-//		//para gerar o novo id da mensagem utilize:
-//		//		int id = daomensagem.obterUltimoId();
-//		//		id++;
-//		//		Mensagem m = new Mensagem(id, usuariologado, texto);
-//		
-//		DAO.begin();
-//		Usuario usuariologado = getLogado();
-//		if(usuariologado == null) {
-//			DAO.rollback();
-//			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
-//		}
+	public static Mensagem criarMensagem(String texto) throws Exception{
+		/*
+		 * tem que esta logado
+		 * criar a mensagem, onde o criador ï¿½ a usuario logada
+		 * adicionar esta mensagem na lista de mensagens de cada usuario do grupo,
+		 * incluindo a do criador
+		 * retornar mensagem criada
+		 */
+
+		//para gerar o novo id da mensagem utilize:
 //		int id = daomensagem.obterUltimoId();
 //		id++;
 //		Mensagem m = new Mensagem(id, usuariologado, texto);
-//		daomensagem.create(m);
-//		usuariologado.adicionar(m);
-//		DAO.commit();
-//		return m;
-//	}
+		
+		DAO.begin();
+		Usuario usuariologado = getLogado();
+		if(usuariologado == null) {
+			DAO.rollback();
+			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
+		}
+		//Integer id = (Integer) daomensagem.obterUltimoId();
+		Mensagem m = new Mensagem(usuariologado, texto);
+		daomensagem.create(m);
+		usuariologado.adicionar(m);
+		DAO.commit();
+		return m;
+	}
 
 	public static List<Mensagem> listarMensagensUsuario() throws Exception{
 		/*
@@ -185,6 +185,7 @@ public class Fachada {
 				throw new Exception("Mensagem nï¿½o encontrada.");
 			}
 			Mensagem m = daomensagem.read(i);
+			System.out.println(usuariologado.getMensagens());
 			if(!usuariologado.getMensagens().contains(m)) {
 				DAO.rollback();
 				throw new Exception("Mensagem nï¿½o pertence ao usuï¿½rio logado.");
@@ -199,29 +200,28 @@ public class Fachada {
 		DAO.commit();
 	}
 
-//	public static void sairDoGrupo() throws  Exception{
-//		/*
-//		 * tem que esta logado
-//		 * 
-//		 * criar a mensagem "fulano saiu do grupo"
-//		 * desativar o usuario logado e fazer logoff dele
-//		 */
-//		DAO.begin(); 
-//		Usuario usuarioLogado = getLogado();
-//		 if(usuarioLogado == null) {
-//			 DAO.rollback();
-//			 throw new Exception("Nenhum usuario logado.");
-//		 }
-//		 String texto = usuarioLogado.getNome() + " saiu do grupo";
-////		 int id = daomensagem.obterUltimoId();
-////		 id++;
-//		 Mensagem m = new Mensagem(id,usuarioLogado, texto);
-//		 daomensagem.create(m);
-//		 usuarioLogado.desativar();
-//		 daousuario.update(usuarioLogado);
-//		 logoff();
-//		 DAO.commit();
-//	}
+	public static void sairDoGrupo() throws  Exception{
+		/*
+		 * tem que esta logado
+		 * 
+		 * criar a mensagem "fulano saiu do grupo"
+		 * desativar o usuario logado e fazer logoff dele
+		 */
+		DAO.begin(); 
+		Usuario usuarioLogado = getLogado();
+		 if(usuarioLogado == null) {
+			 DAO.rollback();
+			 throw new Exception("Nenhum usuario logado.");
+		 }
+		 String texto = usuarioLogado.getNome() + " saiu do grupo";
+		 //Integer id = (Integer) daomensagem.obterUltimoId();
+		 Mensagem m = new Mensagem(usuarioLogado, texto);
+		 daomensagem.create(m);
+		 usuarioLogado.desativar();
+		 daousuario.update(usuarioLogado);
+		 logoff();
+		 DAO.commit();
+	}
 
 	//	public static int totalMensagensUsuario() throws Exception{
 	//		/*
@@ -264,6 +264,11 @@ public class Fachada {
 		 * usar o mï¿½todo Fachada.enviarEmail(...) 
 		 * 
 		 */
+		Usuario u = daousuario.read(nome+"/"+senha);
+		if(u.ativo()) {
+			throw new Exception("Usuário tem que estar desativado.");
+		}
+		enviarEmail("Solicitação de ativação", "Gostaria de solicitar minha ativação, ass. " + nome);
 	}
 
 	public static void solicitarExclusao(String nome, String senha) throws  Exception{
@@ -274,6 +279,12 @@ public class Fachada {
 		 * usar o mï¿½todo Fachada.enviarEmail(...) 
 		 * 
 		 */
+		
+		Usuario u = daousuario.read(nome+"/"+senha);
+		if(u.ativo()) {
+			throw new Exception("Usuário tem que estar desativado.");
+		}
+		enviarEmail("Solicitação de exclusão", "Gostaria de solicitar minha exclusão, ass. " + nome);
 	}
 
 	public static void ativarUsuario(String nome) throws  Exception{
@@ -296,7 +307,8 @@ public class Fachada {
 			throw new Exception("Usuï¿½rio jï¿½ estï¿½ ativo.");
 		}
 		u.ativar();
-//		criarMensagem(u.getNome() + " entrou no grupo");
+		daousuario.update(u);
+		criarMensagem(u.getNome() + " entrou no grupo");
 		daolog.commit();
 	}
 
@@ -320,7 +332,8 @@ public class Fachada {
 			throw new Exception("Usuï¿½rio tem que estar desativado.");
 		}
 		
-		apagarMensagens(daomensagem.GetIds(u));
+		daousuario.delete(u);
+		DAO.commit();
 	}
 
 

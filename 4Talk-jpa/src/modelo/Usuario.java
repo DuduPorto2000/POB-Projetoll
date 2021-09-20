@@ -4,16 +4,24 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private String nomesenha;			//  nome + / + senha
-	@OneToMany(mappedBy = "usuario", orphanRemoval = true)
+	@OneToMany(mappedBy = "criador", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Mensagem> mensagens = new ArrayList<>();   //criadas por ele
 	private boolean ativo = true;
-
+	
+	public Usuario() {}
 	public Usuario(String nomesenha) {
 		this.nomesenha = nomesenha;
 	}

@@ -8,11 +8,14 @@ public class DAOUsuario extends DAO<Usuario>  {
 
 	@SuppressWarnings("unchecked")
 	public Usuario read(Object chave) {
-		String nomesenha = (String) chave;
-		TypedQuery<Usuario> q = (TypedQuery<Usuario>) manager.createQuery("select u from Usuario u where u.nomesenha like :x");
-		q.setParameter("x",nomesenha);
-		Usuario usuario = q.getSingleResult();
-		return usuario;
+		try {
+			String nomesenha = (String) chave;
+			TypedQuery<Usuario> q = (TypedQuery<Usuario>) manager.createQuery("select u from Usuario u where u.nomesenha like :x");
+			q.setParameter("x",nomesenha);
+			return (Usuario) q.getSingleResult();			
+		}catch(Exception e){
+			return null;
+		}
 	}
 	@SuppressWarnings("unchecked")
 	public Usuario GetUsuarioByNome(String nome) {

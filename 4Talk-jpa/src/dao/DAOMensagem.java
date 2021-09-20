@@ -13,11 +13,15 @@ public class DAOMensagem extends DAO<Mensagem>{
 
 	@SuppressWarnings("unchecked")
 	public Mensagem read(Object chave) {
-		int id = (Integer) chave;
-		TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m where m.id = :x");
-		q.setParameter("x",id);
-		Mensagem mensagem = q.getSingleResult();
-		return mensagem;
+		try {
+			int id = (Integer) chave;
+			TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m where m.id = :x");
+			q.setParameter("x",id);
+			Mensagem mensagem = q.getSingleResult();
+			return mensagem;
+		}catch(Exception e) {
+			return null;
+		}
 	}
 	
 	@SuppressWarnings({ "unchecked" })
@@ -32,18 +36,14 @@ public class DAOMensagem extends DAO<Mensagem>{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public int[] GetIds(Usuario u){
-		List<Integer> ids = new ArrayList<>();
-		TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m where m.criador.nomesenha like ~* :x");
-		q.setParameter("x",u.getNome());
-		List<Mensagem> result = q.getResultList();
-		for(Mensagem m : result) {
-			ids.add(m.getId());
-		}
-		int[] array = ids.stream().mapToInt(i->i).toArray();
-		if (result.size() > 0)
-			return array;
-		else
+	public Object obterUltimoId() {
+		try {
+			TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m order by m.id desc");
+			Mensagem temp = q.getSingleResult();
+			return (int) temp.getId();
+		}catch(Exception e) {
+			System.out.println("é aqui o erro");
 			return null;
+		}
 	}
 }

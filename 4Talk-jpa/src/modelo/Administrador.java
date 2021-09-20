@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 public class Administrador extends Usuario {
 	private String email;			
 
+	
+	public Administrador() {}
 	public Administrador(String nomesenha, String email) {
 		super(nomesenha);
 		this.email = email;
