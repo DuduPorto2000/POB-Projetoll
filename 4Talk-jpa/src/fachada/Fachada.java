@@ -1,8 +1,8 @@
 package fachada;
 
-import java.io.Console;
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+
+import org.hibernate.internal.build.AllowSysOut;
 
 import dao.DAO;
 import dao.DAOLog;
@@ -65,7 +67,7 @@ public class Fachada {
 		List<Mensagem> retorno = DAOMensagem.queryMSGs(termo);
 		if(retorno == null) {
 			DAO.rollback();
-			throw new Exception("nï¿½o existe mensagem com este termo.");
+			throw new Exception("não existe mensagem com este termo.");
 		}
 		DAO.commit();
 		return retorno;
@@ -139,9 +141,8 @@ public class Fachada {
 		Usuario usuariologado = getLogado();
 		if(usuariologado == null) {
 			DAO.rollback();
-			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
+			throw new Exception("Usuario não está logado.");
 		}
-		//Integer id = (Integer) daomensagem.obterUltimoId();
 		Mensagem m = new Mensagem(usuariologado, texto);
 		daomensagem.create(m);
 		usuariologado.adicionar(m);
@@ -158,7 +159,7 @@ public class Fachada {
 		if (getLogado() != null)
 			return getLogado().getMensagens();
 		else
-			throw new Exception("O usuario nï¿½o estï¿½ logado");
+			throw new Exception("O usuario não está logado");
 	}
 
 	public static void apagarMensagens(int... ids) throws  Exception{
@@ -176,23 +177,23 @@ public class Fachada {
 		Usuario usuariologado = getLogado();
 		if(usuariologado == null) {
 			DAO.rollback();
-			throw new Exception("Usuï¿½rio nï¿½o estï¿½ logado.");
+			throw new Exception("Usuario não esta logado.");
 		}
 		int size = daomensagem.readAll().size();
 		for (int i : ids) {
 			if(i > size) {
 				DAO.rollback();
-				throw new Exception("Mensagem nï¿½o encontrada.");
+				throw new Exception("Mensagem não encontrada.");
 			}
 			Mensagem m = daomensagem.read(i);
 			System.out.println(usuariologado.getMensagens());
-			if(!usuariologado.getMensagens().contains(m)) {
+			if(usuariologado.getMensagens().stream().filter(item -> item.getId() == m.getId()).collect(Collectors.toList()).isEmpty()) {
 				DAO.rollback();
-				throw new Exception("Mensagem nï¿½o pertence ao usuï¿½rio logado.");
+				throw new Exception("Mensagem não pertence ao usuario logado.");
 			}
 			if(m == null) {
 				DAO.rollback();
-				throw new Exception("Mensagem nï¿½o encontrada.");
+				throw new Exception("Mensagem não encontrada.");
 			}
 			daomensagem.delete(m);
 			usuariologado.remover(m);
@@ -214,7 +215,6 @@ public class Fachada {
 			 throw new Exception("Nenhum usuario logado.");
 		 }
 		 String texto = usuarioLogado.getNome() + " saiu do grupo";
-		 //Integer id = (Integer) daomensagem.obterUltimoId();
 		 Mensagem m = new Mensagem(usuarioLogado, texto);
 		 daomensagem.create(m);
 		 usuarioLogado.desativar();
@@ -296,20 +296,21 @@ public class Fachada {
 		 * criar a mensagem "nome entrou no grupo"
 		 * 
 		 */
+		System.out.println("entrei");
 		DAO.begin();
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("O usuï¿½rio deve ser administrador para executar essa aï¿½ï¿½o.");
+			throw new Exception("O usuario deve ser administrador para executar essa ação.");
 		}
 		if(!u.ativo()) {
 			DAO.rollback();
-			throw new Exception("Usuï¿½rio jï¿½ estï¿½ ativo.");
+			throw new Exception("Usuario já está ativo.");
 		}
 		u.ativar();
 		daousuario.update(u);
 		criarMensagem(u.getNome() + " entrou no grupo");
-		daolog.commit();
+		DAO.commit();
 	}
 
 	public static void apagarUsuario(String nome) throws  Exception{
@@ -320,16 +321,16 @@ public class Fachada {
 		 * apagar as mensagens do usuario e apagar o usuario 
 		 * criar a mensagem "nome foi excluido do sistema"
 		 */
-		
+		System.out.println("entrei");
 		DAO.begin();
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("O usuï¿½rio deve ser administrador para executar essa aï¿½ï¿½o.");
+			throw new Exception("O usuario deve ser administrador para executar essa ação.");
 		}
 		if(u.ativo() && getLogado().getNome() != "admin") {
 			DAO.rollback();
-			throw new Exception("Usuï¿½rio tem que estar desativado.");
+			throw new Exception("Usuario tem que estar desativado.");
 		}
 		
 		daousuario.delete(u);
@@ -359,9 +360,9 @@ public class Fachada {
 			 * ********************************************************
 			 */
 			//configurar emails
-			String emailorigem = "xxxxxxxxxxxxx@gmail.com";
+			String emailorigem = "mashiroedu@gmail.com";
 			String senhaorigem = pegarSenha();
-			String emaildestino = "yyyyyyyyyyyy@gmail.com";
+			String emaildestino = "admimadim05@gmail.com";
 
 			//Gmail
 			Properties props = new Properties();

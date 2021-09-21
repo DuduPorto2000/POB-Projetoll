@@ -1,12 +1,10 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
 
 import modelo.Mensagem;
-import modelo.Usuario;
 
 
 public class DAOMensagem extends DAO<Mensagem>{
@@ -26,8 +24,8 @@ public class DAOMensagem extends DAO<Mensagem>{
 	
 	@SuppressWarnings({ "unchecked" })
 	public static List<Mensagem> queryMSGs(String termo) {
-		TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m where m.texto like ~* :x");
-		q.setParameter("x", termo);
+		TypedQuery<Mensagem> q = (TypedQuery<Mensagem>) manager.createQuery("select m from Mensagem m where m.texto like :x");
+		q.setParameter("x","%"+ termo +"%");
 		List<Mensagem> result = q.getResultList();
 		if (result.size() > 0)
 			return result;
