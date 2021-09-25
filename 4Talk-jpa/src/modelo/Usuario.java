@@ -22,7 +22,7 @@ public class Usuario {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String nomesenha;			//  nome + / + senha
-	@OneToMany(mappedBy = "criador", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "criador", cascade = CascadeType.ALL)
 	private List<Mensagem> mensagens = new ArrayList<>();   //criadas por ele
 	private boolean ativo = true;
 	

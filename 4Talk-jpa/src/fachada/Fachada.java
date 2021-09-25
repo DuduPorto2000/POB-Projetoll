@@ -16,13 +16,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-import org.hibernate.internal.build.AllowSysOut;
-
 import dao.DAO;
 import dao.DAOLog;
 import dao.DAOMensagem;
 import dao.DAOUsuario;
-import javassist.expr.Instanceof;
 import modelo.Administrador;
 import modelo.Log;
 import modelo.Mensagem;
@@ -291,7 +288,6 @@ public class Fachada {
 		 * criar a mensagem "nome entrou no grupo"
 		 * 
 		 */
-		System.out.println("entrei");
 		DAO.begin();
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(!getLogado().getNome().equals("admin")) {
@@ -316,9 +312,7 @@ public class Fachada {
 		 * apagar as mensagens do usuario e apagar o usuario 
 		 * criar a mensagem "nome foi excluido do sistema"
 		 */
-		System.out.println("entrei");
 		DAO.begin();
-		System.out.println("entrou");
 		Usuario u = daousuario.GetUsuarioByNome(nome);
 		if(!getLogado().getNome().equals("admin")) {
 			DAO.rollback();

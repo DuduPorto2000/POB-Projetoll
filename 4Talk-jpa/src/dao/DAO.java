@@ -74,8 +74,8 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 			log.info("url de conexao= "+prop.getProperty("javax.persistence.jdbc.url"));
 
-			factory = Persistence.createEntityManagerFactory(nomeUnidadePersistencia, prop);
 			prop.setProperty("javax.persistence.sharedCache.mode", "DISABLE_SELECTIVE");
+			factory = Persistence.createEntityManagerFactory(nomeUnidadePersistencia, prop);
 			manager = factory.createEntityManager();	
 		}
 	}
