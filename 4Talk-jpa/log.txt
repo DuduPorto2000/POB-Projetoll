@@ -1,58 +1,243 @@
-[EL Fine]: server: 2021-09-20 22:41:51.14--Thread(Thread[AWT-EventQueue-0,6,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2021-09-20 22:41:51.411--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Mensagem] is set to [FIELD].
-[EL Config]: metadata: 2021-09-20 22:41:51.447--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field criador] is being defaulted to: class modelo.Usuario.
-[EL Config]: metadata: 2021-09-20 22:41:51.448--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Log] is set to [FIELD].
-[EL Config]: metadata: 2021-09-20 22:41:51.449--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Usuario] is set to [FIELD].
-[EL Config]: metadata: 2021-09-20 22:41:51.455--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field mensagens] is being defaulted to: class modelo.Mensagem.
-[EL Config]: metadata: 2021-09-20 22:41:51.457--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Administrador] is set to [FIELD].
-[EL Config]: metadata: 2021-09-20 22:41:51.458--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Mensagem] is being defaulted to: Mensagem.
-[EL Config]: metadata: 2021-09-20 22:41:51.46--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Mensagem] is being defaulted to: MENSAGEM.
-[EL Config]: metadata: 2021-09-20 22:41:51.492--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [texto] is being defaulted to: TEXTO.
-[EL Config]: metadata: 2021-09-20 22:41:51.493--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2021-09-20 22:41:51.494--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [datahora] is being defaulted to: DATAHORA.
-[EL Config]: metadata: 2021-09-20 22:41:51.494--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Log] is being defaulted to: Log.
-[EL Config]: metadata: 2021-09-20 22:41:51.494--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Log] is being defaulted to: LOG.
-[EL Config]: metadata: 2021-09-20 22:41:51.495--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nome] is being defaulted to: NOME.
-[EL Config]: metadata: 2021-09-20 22:41:51.495--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2021-09-20 22:41:51.496--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [datahora] is being defaulted to: DATAHORA.
-[EL Config]: metadata: 2021-09-20 22:41:51.496--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Administrador] is being defaulted to: Administrador.
-[EL Config]: metadata: 2021-09-20 22:41:51.497--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Usuario] is being defaulted to: Usuario.
-[EL Config]: metadata: 2021-09-20 22:41:51.497--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Usuario] is being defaulted to: USUARIO.
-[EL Config]: metadata: 2021-09-20 22:41:51.498--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nomesenha] is being defaulted to: NOMESENHA.
-[EL Config]: metadata: 2021-09-20 22:41:51.498--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [ativo] is being defaulted to: ATIVO.
-[EL Config]: metadata: 2021-09-20 22:41:51.499--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2021-09-20 22:41:51.501--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The discriminator column name for the root inheritance class [modelo.Usuario] is being defaulted to: DTYPE.
-[EL Config]: metadata: 2021-09-20 22:41:51.502--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2021-09-20 22:41:51.513--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field criador] is being defaulted to: ID.
-[EL Config]: metadata: 2021-09-20 22:41:51.513--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [criador] is being defaulted to: CRIADOR_ID.
-[EL Info]: 2021-09-20 22:41:51.8--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.8.v20201217-ecdf3c32c4
-[EL Fine]: connection: 2021-09-20 22:41:52.33--Thread(Thread[AWT-EventQueue-0,6,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
-[EL Fine]: connection: 2021-09-20 22:41:52.34--ServerSession(1847205959)--Connection(270285)--Thread(Thread[AWT-EventQueue-0,6,main])--connecting(DatabaseLogin(
+[EL Fine]: server: 2021-09-24 22:17:39.626--Thread(Thread[AWT-EventQueue-0,6,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2021-09-24 22:17:39.783--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Mensagem] is set to [FIELD].
+[EL Config]: metadata: 2021-09-24 22:17:39.81--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the many to one mapping element [field criador] is being defaulted to: class modelo.Usuario.
+[EL Config]: metadata: 2021-09-24 22:17:39.811--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Log] is set to [FIELD].
+[EL Config]: metadata: 2021-09-24 22:17:39.811--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Usuario] is set to [FIELD].
+[EL Config]: metadata: 2021-09-24 22:17:39.817--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field mensagens] is being defaulted to: class modelo.Mensagem.
+[EL Config]: metadata: 2021-09-24 22:17:39.817--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The access type for the persistent class [class modelo.Administrador] is set to [FIELD].
+[EL Config]: metadata: 2021-09-24 22:17:39.818--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Mensagem] is being defaulted to: Mensagem.
+[EL Config]: metadata: 2021-09-24 22:17:39.82--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Mensagem] is being defaulted to: MENSAGEM.
+[EL Config]: metadata: 2021-09-24 22:17:39.833--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [texto] is being defaulted to: TEXTO.
+[EL Config]: metadata: 2021-09-24 22:17:39.835--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-09-24 22:17:39.835--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [datahora] is being defaulted to: DATAHORA.
+[EL Config]: metadata: 2021-09-24 22:17:39.835--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Log] is being defaulted to: Log.
+[EL Config]: metadata: 2021-09-24 22:17:39.835--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Log] is being defaulted to: LOG.
+[EL Config]: metadata: 2021-09-24 22:17:39.835--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nome] is being defaulted to: NOME.
+[EL Config]: metadata: 2021-09-24 22:17:39.836--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-09-24 22:17:39.836--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [datahora] is being defaulted to: DATAHORA.
+[EL Config]: metadata: 2021-09-24 22:17:39.836--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Administrador] is being defaulted to: Administrador.
+[EL Config]: metadata: 2021-09-24 22:17:39.837--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The alias name for the entity class [class modelo.Usuario] is being defaulted to: Usuario.
+[EL Config]: metadata: 2021-09-24 22:17:39.837--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Usuario] is being defaulted to: USUARIO.
+[EL Config]: metadata: 2021-09-24 22:17:39.838--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nomesenha] is being defaulted to: NOMESENHA.
+[EL Config]: metadata: 2021-09-24 22:17:39.838--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [ativo] is being defaulted to: ATIVO.
+[EL Config]: metadata: 2021-09-24 22:17:39.838--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-09-24 22:17:39.838--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The table name for entity [class modelo.Administrador] is being defaulted to: ADMINISTRADOR.
+[EL Config]: metadata: 2021-09-24 22:17:39.839--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The target entity (reference) class for the one to many mapping element [field mensagens] is being defaulted to: class modelo.Mensagem.
+[EL Config]: metadata: 2021-09-24 22:17:39.839--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [nomesenha] is being defaulted to: NOMESENHA.
+[EL Config]: metadata: 2021-09-24 22:17:39.84--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [ativo] is being defaulted to: ATIVO.
+[EL Config]: metadata: 2021-09-24 22:17:39.84--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-09-24 22:17:39.84--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2021-09-24 22:17:39.85--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The primary key column name for the mapping element [field criador] is being defaulted to: ID.
+[EL Config]: metadata: 2021-09-24 22:17:39.85--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--The foreign key column name for the mapping element [criador] is being defaulted to: CRIADOR_ID.
+[EL Info]: 2021-09-24 22:17:39.951--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.8.v20201217-ecdf3c32c4
+[EL Fine]: connection: 2021-09-24 22:17:40.305--Thread(Thread[AWT-EventQueue-0,6,main])--Detected database platform: org.eclipse.persistence.platform.database.PostgreSQLPlatform
+[EL Fine]: connection: 2021-09-24 22:17:40.314--ServerSession(747447129)--Connection(132768042)--Thread(Thread[AWT-EventQueue-0,6,main])--connecting(DatabaseLogin(
 	platform=>PostgreSQLPlatform
 	user name=> "postgres"
 	datasource URL=> "jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true"
 ))
-[EL Config]: connection: 2021-09-20 22:41:52.447--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--Connected: jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true
+[EL Config]: connection: 2021-09-24 22:17:40.381--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--Connected: jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true
 	User: postgres
-	Database: PostgreSQL  Version: 13.4
+	Database: PostgreSQL  Version: 13.1
 	Driver: PostgreSQL JDBC Driver  Version: 42.2.19
-[EL Fine]: connection: 2021-09-20 22:41:52.525--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/dudu/OneDrive/Documentos/IFPB/POB/WorkSpace/projetoll/4Talk-jpa/target/classes/_eclipselink-postgres_url=jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true login successful
-[EL Fine]: sql: 2021-09-20 22:41:52.915--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO WHERE NOMESENHA LIKE ?
+[EL Fine]: connection: 2021-09-24 22:17:40.425--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/PICHAU/Documents/GitHub/POB-Projetoll/4Talk-jpa/target/classes/_eclipselink-postgres_url=jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true login successful
+[EL Fine]: sql: 2021-09-24 22:17:40.707--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE NOMESENHA LIKE ?
 	bind => [admin/123]
-[EL Fine]: sql: 2021-09-20 22:42:32.845--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO WHERE NOMESENHA LIKE ?
-	bind => [edu/123]
-[EL Fine]: sql: 2021-09-20 22:42:39.155--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO WHERE NOMESENHA LIKE ?
+[EL Fine]: sql: 2021-09-24 22:17:40.71--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE NOMESENHA LIKE ?
 	bind => [admin/123]
-[EL Fine]: sql: 2021-09-20 22:42:39.177--ClientSession(1474072611)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--INSERT INTO LOG (DATAHORA, NOME) VALUES (?, ?)
-	bind => [20210920 22:42:39, admin - login]
-[EL Fine]: sql: 2021-09-20 22:42:39.182--ClientSession(1474072611)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--select lastval()
-[EL Fine]: sql: 2021-09-20 22:42:44.125--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:42:44.138--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:42:52.1--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:43:00.101--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:43:08.111--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:43:16.118--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: sql: 2021-09-20 22:43:24.124--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DTYPE, ATIVO, NOMESENHA, EMAIL FROM USUARIO
-[EL Fine]: connection: 2021-09-20 22:43:25.813--ServerSession(1847205959)--Connection(1550910911)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect
-[EL Fine]: connection: 2021-09-20 22:43:25.814--ServerSession(1847205959)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/dudu/OneDrive/Documentos/IFPB/POB/WorkSpace/projetoll/4Talk-jpa/target/classes/_eclipselink-postgres_url=jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true logout successful
-[EL Fine]: connection: 2021-09-20 22:43:25.814--ServerSession(1847205959)--Connection(270285)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect
+[EL Fine]: sql: 2021-09-24 22:17:54.055--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE NOMESENHA LIKE ?
+	bind => [aco/123]
+[EL Fine]: sql: 2021-09-24 22:17:54.056--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE NOMESENHA LIKE ?
+	bind => [aco/123]
+[EL Fine]: sql: 2021-09-24 22:17:54.076--ClientSession(1924951504)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--INSERT INTO LOG (DATAHORA, NOME) VALUES (?, ?)
+	bind => [20210924 22:17:54, aco - login]
+[EL Fine]: sql: 2021-09-24 22:17:54.078--ClientSession(1924951504)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--select lastval()
+[EL Fine]: sql: 2021-09-24 22:17:56.118--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:17:56.12--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:17:56.124--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:17:56.125--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:17:56.127--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:17:56.127--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:17:56.131--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:17:56.132--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:17:56.132--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:17:56.133--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:17:56.134--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:17:56.134--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:17:56.177--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:17:59.596--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:17:59.6--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM WHERE (CRIADOR_ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:17:59.601--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:17:59.602--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:17:59.605--ClientSession(49662670)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--DELETE FROM MENSAGEM WHERE (ID = ?)
+	bind => [19]
+[EL Fine]: sql: 2021-09-24 22:18:04.108--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:04.11--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:18:04.111--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:04.112--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:04.113--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:04.114--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:04.115--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:04.116--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:04.117--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:04.118--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:04.118--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:04.119--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:08.001--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:12.114--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:20.117--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:28.12--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:35.562--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:36.127--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:43.678--ClientSession(670754541)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--INSERT INTO MENSAGEM (DATAHORA, TEXTO, CRIADOR_ID) VALUES (?, ?, ?)
+	bind => [20210924 22:18:43, wwe, 7]
+[EL Fine]: sql: 2021-09-24 22:18:43.679--ClientSession(670754541)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--select lastval()
+[EL Fine]: sql: 2021-09-24 22:18:43.681--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:43.682--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:18:43.683--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:43.683--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:43.684--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:43.685--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:43.686--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:43.686--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:43.687--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:43.687--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:43.688--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:43.688--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:44.134--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:46.079--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:46.081--ClientSession(1081051959)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--DELETE FROM MENSAGEM WHERE (ID = ?)
+	bind => [20]
+[EL Fine]: sql: 2021-09-24 22:18:52.136--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:52.137--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:18:52.138--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:52.139--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:52.139--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:52.14--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:52.141--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:52.141--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:52.142--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:52.142--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:52.143--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:52.144--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:52.855--ClientSession(453562933)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--INSERT INTO MENSAGEM (DATAHORA, TEXTO, CRIADOR_ID) VALUES (?, ?, ?)
+	bind => [20210924 22:18:52, asd, 7]
+[EL Fine]: sql: 2021-09-24 22:18:52.856--ClientSession(453562933)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--select lastval()
+[EL Fine]: sql: 2021-09-24 22:18:52.857--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:52.858--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:18:52.859--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:52.86--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:18:52.86--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:52.861--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:18:52.862--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:52.862--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:18:52.863--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:52.863--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:18:52.864--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:52.865--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:18:59.511--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:18:59.513--ClientSession(2062782302)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--DELETE FROM MENSAGEM WHERE (ID = ?)
+	bind => [21]
+[EL Fine]: sql: 2021-09-24 22:19:00.148--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:00.149--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [1]
+[EL Fine]: sql: 2021-09-24 22:19:00.15--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:19:00.151--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [2]
+[EL Fine]: sql: 2021-09-24 22:19:00.151--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:19:00.152--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [3]
+[EL Fine]: sql: 2021-09-24 22:19:00.153--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:19:00.154--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [5]
+[EL Fine]: sql: 2021-09-24 22:19:00.155--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:19:00.155--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [6]
+[EL Fine]: sql: 2021-09-24 22:19:00.156--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, EMAIL, NOMESENHA FROM ADMINISTRADOR WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:19:00.156--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, ATIVO, NOMESENHA FROM USUARIO WHERE (ID = ?)
+	bind => [7]
+[EL Fine]: sql: 2021-09-24 22:19:08.152--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:16.164--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:24.174--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:32.189--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:40.15--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:40.196--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:48.207--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:19:56.217--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:04.226--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:12.227--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:20.227--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:28.239--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:36.239--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:44.239--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:20:52.243--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:21:00.251--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:21:08.253--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:21:16.268--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: sql: 2021-09-24 22:21:24.271--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--SELECT ID, DATAHORA, TEXTO, CRIADOR_ID FROM MENSAGEM
+[EL Fine]: connection: 2021-09-24 22:21:24.653--ServerSession(747447129)--Connection(808200332)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect
+[EL Fine]: connection: 2021-09-24 22:21:24.653--ServerSession(747447129)--Thread(Thread[AWT-EventQueue-0,6,main])--/file:/C:/Users/PICHAU/Documents/GitHub/POB-Projetoll/4Talk-jpa/target/classes/_eclipselink-postgres_url=jdbc:postgresql://localhost:5432/4talk-jpa?createDatabaseIfNotExist=true logout successful
+[EL Fine]: connection: 2021-09-24 22:21:24.653--ServerSession(747447129)--Connection(132768042)--Thread(Thread[AWT-EventQueue-0,6,main])--disconnect

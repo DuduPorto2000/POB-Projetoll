@@ -22,6 +22,7 @@ import dao.DAO;
 import dao.DAOLog;
 import dao.DAOMensagem;
 import dao.DAOUsuario;
+import javassist.expr.Instanceof;
 import modelo.Administrador;
 import modelo.Log;
 import modelo.Mensagem;
@@ -179,14 +180,8 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Usuario não esta logado.");
 		}
-		int size = daomensagem.readAll().size();
 		for (int i : ids) {
-			if(i > size) {
-				DAO.rollback();
-				throw new Exception("Mensagem não encontrada.");
-			}
 			Mensagem m = daomensagem.read(i);
-			System.out.println(usuariologado.getMensagens());
 			if(usuariologado.getMensagens().stream().filter(item -> item.getId() == m.getId()).collect(Collectors.toList()).isEmpty()) {
 				DAO.rollback();
 				throw new Exception("Mensagem não pertence ao usuario logado.");
@@ -299,11 +294,11 @@ public class Fachada {
 		System.out.println("entrei");
 		DAO.begin();
 		Usuario u = daousuario.GetUsuarioByNome(nome);
-		if(getLogado().getNome() != "admin") {
+		if(!getLogado().getNome().equals("admin")) {
 			DAO.rollback();
 			throw new Exception("O usuario deve ser administrador para executar essa ação.");
 		}
-		if(!u.ativo()) {
+		if(u.ativo()) {
 			DAO.rollback();
 			throw new Exception("Usuario já está ativo.");
 		}
@@ -323,15 +318,18 @@ public class Fachada {
 		 */
 		System.out.println("entrei");
 		DAO.begin();
+		System.out.println("entrou");
 		Usuario u = daousuario.GetUsuarioByNome(nome);
-		if(getLogado().getNome() != "admin") {
+		if(!getLogado().getNome().equals("admin")) {
 			DAO.rollback();
 			throw new Exception("O usuario deve ser administrador para executar essa ação.");
 		}
-		if(u.ativo() && getLogado().getNome() != "admin") {
+		if(u.ativo() && !getLogado().getNome().equals("admin")) {
 			DAO.rollback();
 			throw new Exception("Usuario tem que estar desativado.");
 		}
+		
+		criarMensagem(nome + " foi excluido do sistema");
 		
 		daousuario.delete(u);
 		DAO.commit();

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
+@Cacheable(false)
 public class Mensagem {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
