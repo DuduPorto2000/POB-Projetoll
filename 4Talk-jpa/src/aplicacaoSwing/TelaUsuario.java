@@ -161,39 +161,24 @@ public class TelaUsuario {
 		frame.getContentPane().add(button);
 
 		button_1 = new JButton("Apagar");
-		button_1.setBounds(178, 225, 74, 23);
-		frame.getContentPane().add(button_1);
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(table.getSelectedRow() > 0) {
-						String nomeeee = (String) table.getValueAt(table.getSelectedRow(), 0);
-						Fachada.apagarUsuario(nomeeee);
-						label.setText("Usuario apagado.");
-					}else {
-						label.setText("selecione uma linha");
-					}
+					Fachada.apagarUsuario(textField.getText());
 				}
 				catch(Exception ex) {
 					label.setText(ex.getMessage());
 				}
-
 			}
 		});
+		button_1.setBounds(262, 201, 74, 23);
+		frame.getContentPane().add(button_1);
 
 		button_2 = new JButton("Ativar");
-		button_2.setBounds(256, 225, 74, 23);
-		frame.getContentPane().add(button_2);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(table.getSelectedRow() > 0) {
-						String nomeeee = (String) table.getValueAt(table.getSelectedRow(), 0);
-						Fachada.ativarUsuario(nomeeee);
-						label.setText("Usuario ativado.");
-					}else {
-						label.setText("selecione uma linha");
-					}
+					Fachada.ativarUsuario(textField.getText());
 				}
 				catch(Exception ex) {
 					label.setText(ex.getMessage());
@@ -201,6 +186,9 @@ public class TelaUsuario {
 
 			}
 		});
+		button_2.setBounds(262, 226, 74, 23);
+		frame.getContentPane().add(button_2);
+
 		timer = new Timer(0, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

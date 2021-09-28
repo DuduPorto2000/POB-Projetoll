@@ -206,6 +206,10 @@ public class Fachada {
 			 DAO.rollback();
 			 throw new Exception("Nenhum usuario logado.");
 		 }
+		 if(usuarioLogado.getNome().equals("admin")) {
+			 DAO.rollback();
+			 throw new Exception("Administrador não pode sair do grupo.");
+		 }
 		 String texto = usuarioLogado.getNome() + " saiu do grupo";
 		 Mensagem m = new Mensagem(usuarioLogado, texto);
 		 daomensagem.create(m);
@@ -318,14 +322,13 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("O usuario deve ser administrador para executar essa ação.");
 		}
-		if(u.ativo() && !getLogado().getNome().equals("admin")) {
+		if(u.ativo()) {
 			DAO.rollback();
 			throw new Exception("Usuario tem que estar desativado.");
 		}
 		
-		criarMensagem(nome + " foi excluido do sistema");
-		
 		daousuario.delete(u);
+		criarMensagem(nome + " foi excluido do sistema");
 		DAO.commit();
 	}
 
