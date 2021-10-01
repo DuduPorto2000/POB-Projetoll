@@ -13,14 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Cacheable(false)
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
 	private String nomesenha;			//  nome + / + senha
 	@OneToMany(mappedBy = "criador", cascade = CascadeType.ALL)
 	private List<Mensagem> mensagens = new ArrayList<>();   //criadas por ele

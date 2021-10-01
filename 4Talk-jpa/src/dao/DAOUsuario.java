@@ -21,7 +21,7 @@ public class DAOUsuario extends DAO<Usuario>  {
 	public Usuario GetUsuarioByNome(String nome) {
 		String nomee = (String) nome;
 		TypedQuery<Usuario> q = (TypedQuery<Usuario>) manager.createQuery("select u from Usuario u where u.nomesenha like :x");
-		q.setParameter("x","%" + nomee + "%");
+		q.setParameter("x", nomee + "/%");
 		Usuario usuario = q.getSingleResult();
 		return usuario;
 	}
